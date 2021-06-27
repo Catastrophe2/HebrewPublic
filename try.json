@@ -1,0 +1,64 @@
+[
+  [
+    {
+      "lessonTitle": "trying to learn Hebrew",
+      "lessonDesc": "this is ez hebrew lesson",
+      "lessonId": "1"
+    },
+    {
+      "text": "hello this is english hello this is english hello this is english hello this is english hello this is english hello this is english",
+      "lang": "eng"
+    },
+    {
+      "text": "hello this is english",
+      "lang": "eng"
+    },
+    {
+      "text": "היום הרביעי: גם הבוקר (יום ה) נמשך סבב ההסלמה בין צהל לבין חמאס והג'יהאד האיסלאמי בעזה.",
+      "lang": "heb"
+    },
+    {
+      "text": "hello this is english",
+      "lang": "eng"
+    },
+    {
+      "text": "רקע ירי הרקטות ליישובי הדרום ותקיפות צהל ברצועה, חוותה המשטרה אובדן שליטה על הפרעות ביישובים ערביים ",
+      "lang": "heb"
+    },
+    {
+      "text": "בלוד, בעכו, בבת ים, בוואדי ערה, בטבריה ועוד",
+      "lang": "heb"
+    }
+  ],
+  [
+    {
+      "lessonTitle": "trying to learn Hebrew the second coming",
+      "lessonDesc": "this is hard hebrew lesson",
+      "lessonId": "2"
+    },
+    {
+      "text": "hello this is english",
+      "lang": "eng"
+    },
+    {
+      "text": "hello this is english",
+      "lang": "eng"
+    },
+    {
+      "text": "חיסל בכירים במטה הכללי של חמאס ",
+      "lang": "heb"
+    },
+    {
+      "text": "hello this is english",
+      "lang": "eng"
+    },
+    {
+      "text": "המקורבים למוחמד דף",
+      "lang": "heb"
+    },
+    {
+      "text": "ינעל רבאק",
+      "lang": "heb"
+    }
+  ]
+]
