@@ -84,12 +84,31 @@ app.post("/user/login", async (req, res) => {
 
 app.post("/user/savedwords", async (req, res) => {
   const { token } = await req.body;
-  console.log("enter");
   try {
     const decoded = jwt.verify(token, JWT_secret);
     const wordsList = await User.find({ email: decoded.email });
+
+    const getTrans = async (wordsList1) => {
+      console.log("knosa");
+      const translations = [];
+      await Promise.all(
+        wordsList1[0].words.map(async (word) => {
+          await Hebrew.find({ inflections: word }, function (err, result) {
+            if (err) console.log(err);
+            translations.push(result);
+          });
+        })
+      );
+      return translations;
+    };
+    const b = await getTrans(wordsList);
     console.log(wordsList[0].words);
-    res.json({ status: "ok", data: wordsList[0].words });
+    console.log(b);
+    res.json({
+      status: "ok",
+      data: wordsList[0].words,
+      translations: b,
+    });
   } catch {}
 });
 
@@ -141,10 +160,12 @@ app.get("/lessonNum/:lessonid", (req, res) => {
   });
 });
 
-app.get("/trans/:translated", async (req, res) => {
+app.post("/trans/:translated", async (req, res) => {
+  const { token } = await req.body;
+  const username = jwt.verify(token, JWT_secret);
   let question = req.params.translated;
   let a = question.slice(1);
-  let doesExist = await User.find({ email: "asdasdasd", words: a });
+  let doesExist = await User.find({ email: username.email, words: a });
 
   Hebrew.find({ inflections: a }, async function (err, result) {
     if (err) console.log(err);
