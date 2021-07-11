@@ -1,0 +1,40 @@
+.lesson-content {
+  width: 60%;
+  row-gap: 5%;
+  font-size: larger;
+}
+
+.trans-box {
+  height: max-content;
+  width: 200px;
+  position: absolute;
+  z-index: 1;
+  top: 5%;
+  right: 18%;
+  overflow-x: hidden;
+  border-style: groove;
+  border-color: #4caf50;
+}
+
+.lesson-text-1 {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  margin: 5%;
+}
+
+.heb-text {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  margin: 5%;
+}
+
+.trans-box > div > div > h3 {
+  direction: rtl;
+}
+.trans-box {
+  max-height: 80%;
+}
+
+.trans-box > div > img {
+  width: 15%;
+}

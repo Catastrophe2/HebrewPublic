@@ -1,0 +1,9 @@
+.listedWord {
+  border: #4caf50;
+  border-width: 2px;
+  border-style: solid;
+  direction: rtl;
+  font-size: larger;
+  margin: 2%;
+  padding: 2%;
+}
