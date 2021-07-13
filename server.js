@@ -6,16 +6,15 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const dotenv = require("dotenv").config();
 
-const JWT_secret = "gjhbnsfdghaBNJKSDB734HBJDFFXdfafssddsd";
+let connectionString = process.env.connectionString;
+const JWT_secret = process.env.JWT_secret;
 
-mongoose.connect(
-  "mongodb+srv://yedidya:AnorLondo2@cluster0.x9tym.mongodb.net/hebrews?authSource=admin&replicaSet=atlas-g2j302-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect(connectionString, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const dicScehma = new mongoose.Schema({
   part_of_speech: String,
@@ -182,32 +181,3 @@ db.once("open", function () {
     console.log("Example app listening on port 8000!");
   });
 });
-
-//the code used to mutate the json to have the no nikkud word. there is a better way to do it for sure...
-// let bbb = JSON.stringify(dictionary);
-// fs.writeFile("he-en-dic-nikkudless.json", bbb, function (err, result) {
-//   if (err) console.log("error", err);
-// });
-// const fs = require("fs");
-// for (let i = 0; i < dictionary.length; i++) {
-//   dictionary[i].inflections = dictionary[i].translated;
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05c1/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05c2/g, "");
-
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05b0/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05b1/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05b2/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05b3/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05b4/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05b5/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05b6/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05b7/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05b8/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05b9/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05bA/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05bB/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05bC/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05bD/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05bE/g, "");
-//   dictionary[i].inflections = dictionary[i].inflections.replace(/\u05bF/g, "");
-// }
